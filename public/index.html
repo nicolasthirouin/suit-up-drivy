@@ -1,33 +1,101 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
+<!--
+	Identity by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
 <html>
-  <head>
-    <title>CSS/HTML Workshop with Drivy</title>
-  </head>
-  <body>
-    <div id="car">
-      <input class="model" type="text" placeholder="Car model"/>
-      <input class="price-by-day" type="number" placeholder="Price by day"/>
-      <input class="price-by-km" type="number" placeholder="Price by km"/>
-    </div>
-    <div id="rental">
-      <input class="begin" type="date" placeholder="Rental begin date"/>
-      <input class="end" type="date" placeholder="Rental end date"/>
-      <input class="distance" type="number" placeholder="Distance in km"/>
-      <input class="option" type="checkbox" placeholder="Deductible option"/>
-    </div>
-    <button id="compute">Compute</button>
-    <div id="actors"></div>
-    <script id="template" type="x-tmpl-mustache">
-      {{#actors}}
-        <div class="actor">
-          <span>{{who}}</span>
-          <span>{{type}}</span>
-          <span>{{amount}}</span>
-        </div>
-      {{/actors}}
-    </script>
+	<head>
+		<title>Identity by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-loading">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<section id="main">
+						<header>
+							<span class="avatar"><img src="images/drivy.jpg" alt="" /></span>
+							<h1>Drivy</h1>
+							<p>Rent Passenger Car</p>
+						</header>
+						<hr />
+						<h2>Please Complete</h2>
+						<form method="post" action="#">
+							<div id="car">
+							<div class="field">
+								<input class="model" type="text" placeholder="Car model" />
+							</div>
+							<div class="field">
+								<input class="price-by-day" type="number" placeholder="Price by day" />
+								<input class="price-by-km"  type="number" placeholder="Price by km" />
+							</div>
+							<div id="rental">
+							<div class="field">
+								<input class="begin" type="date" placeholder="Begin date"/>
+								<input class="end" type="date" placeholder="End date"/>
+							</div>																				
+							<div class="field">
+								<input class="distance" placeholder="Distance in Kms" />
+							</div>				
+							<div class="field">
+								<input class="option" type="checkbox" placeholder="Deductible option"/>
+							</div>
+							</div>
+							<ul class="actions">
+								<li><a id="compute" href="#" class="button">Compute</a></li>
+							</ul>
+						</form>
+						<hr />
+						
+						    <div id="actors"></div>
+							<script id="template" type="x-tmpl-mustache">
+								{{#actors}}
+							<div class="actor">
+								<span>{{who}}</span>
+								<span>{{type}}</span>
+								<span>{{amount}}</span>
+        					</div>
+								{{/actors}}
+								</script>
+
+						<hr />
+						<footer>
+							<ul class="icons">
+								<li><a href="https://twitter.com/drivy" class="fa-twitter">Twitter</a></li>
+								<li><a href="https://www.instagram.com/drivyfr/" class="fa-instagram">Instagram</a></li>
+								<li><a href="https://fr-fr.facebook.com/drivyfr/" class="fa-facebook">Facebook</a></li>
+							</ul>
+						</footer>
+					</section>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<ul class="copyright">
+							<li>&copy; JustDev</li><li>Design: <a href="www.justdev.fr">Just Dev</a></li>
+						</ul>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<!--[if lte IE 8]><script src="assets/js/respond.min.js"></script><![endif]-->
+			<script>
+				if ('addEventListener' in window) {
+					window.addEventListener('load', function() { document.body.className = document.body.className.replace(/\bis-loading\b/, ''); });
+					document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
+				}
+			</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.1/mustache.min.js"></script>
     <script src="drivy.js"></script>
     <script src="index.js"></script>
-  </body>
+	</body>
 </html>
